@@ -1,3 +1,64 @@
 [gd_scene format=3 uid="uid://cd2yhtj4c7iyw"]
 
-[node name="Part_A" type="Node3D" unique_id=2060501816]
+[ext_resource type="PackedScene" uid="uid://jtxq5ribap12" path="res://part_b.tscn" id="1_ys316"]
+[ext_resource type="PackedScene" uid="uid://c2lgg2dly1ay" path="res://part_c.tscn" id="2_to4tk"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v2muc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_v2muc"]
+size = Vector3(2.2216797, 0.2119751, 6.9317627)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1bnvj"]
+size = Vector3(11.406616, 4.914917, 1)
+
+[sub_resource type="Environment" id="Environment_v2muc"]
+
+[node name="Part_A" type="Node3D" unique_id=2059629613]
+
+[node name="P-2 Floor" type="MeshInstance3D" parent="." unique_id=109332011]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_v2muc")
+
+[node name="P-2 Wall2" type="MeshInstance3D" parent="P-2 Floor" unique_id=1152762637]
+transform = Transform3D(-1.0927847e-08, -0.25, 0, 0.25, -1.0927847e-08, 0, 0, 0, 0.25, 0.6769678, 0.2391709, 0.028170371)
+layers = 2
+mesh = SubResource("BoxMesh_v2muc")
+
+[node name="P-2 Wall3" type="MeshInstance3D" parent="P-2 Floor/P-2 Wall2" unique_id=737768077]
+transform = Transform3D(-1.7484556e-08, 0.4, 0, -0.4, -1.7484556e-08, 0, 0, 0, 0.4, -0.1737001, 2.016001, 3.7363107)
+mesh = SubResource("BoxMesh_1bnvj")
+
+[node name="P-2 Wall 4" type="MeshInstance3D" parent="P-2 Floor/P-2 Wall2" unique_id=2004079316]
+transform = Transform3D(2.5, 1.4210855e-14, 0, -1.4210855e-14, 2.5, 0, 0, 0, 2.5, -1.740447, 4.174629, -2.0154448)
+layers = 2
+mesh = SubResource("BoxMesh_v2muc")
+
+[node name="P-2 Ceiling" type="MeshInstance3D" parent="P-2 Floor" unique_id=1570665011]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.11689406, 0.47700626, -0.2670047)
+layers = 2
+mesh = SubResource("BoxMesh_v2muc")
+
+[node name="Cerberus5" parent="." unique_id=970916361 instance=ExtResource("1_ys316")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.7449198, 2.4346461, 6.230772)
+
+[node name="Cerberus" parent="." unique_id=550813054 instance=ExtResource("1_ys316")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.16353661, 2.5455525, 6.4119625)
+
+[node name="Cerberus2" parent="." unique_id=193531984 instance=ExtResource("1_ys316")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 2.38371, 2.4993896, 6.7044673)
+
+[node name="Cerberus3" parent="." unique_id=558953549 instance=ExtResource("1_ys316")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 4.715253, 2.33894, 7.266036)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=470222884]
+transform = Transform3D(-0.9983469, 0, -0.057475735, 0, 1, 0, 0.057475735, 0, -0.9983469, 0, 1.8385537, 2.211604)
+
+[node name="Part_C" parent="Camera3D" unique_id=1842323565 instance=ExtResource("2_to4tk")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1002145181]
+environment = SubResource("Environment_v2muc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=16840128]
+transform = Transform3D(-0.99999255, 0, -0.0038586557, 0, 1, 0, 0.0038586557, 0, -0.99999255, 0, 0.855706, -3.5321226)
+light_indirect_energy = 7.375
+light_angular_distance = 25.95

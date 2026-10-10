@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://c2lgg2dly1ay"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ovfvb"]
+load_path = "res://.godot/imported/Screenshot 2026-10-10 3.13.32 PM.png-d2665a0514b034ae2fd087cb9cd4027f.ctex"
+
 [node name="Part_C" type="Control" unique_id=1842323565]
 layout_mode = 3
 anchors_preset = 15
@@ -10,11 +13,22 @@ grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1083034028]
 layout_mode = 0
-offset_right = 1159.0
-offset_bottom = 650.0
+offset_left = 6.0
+offset_top = -254.0
+offset_right = 1165.0
+offset_bottom = 396.0
 theme_override_font_sizes/normal_font_size = 20
-text = "Add more labels, images, and other Control nodes to this scene to build your personal poster for Part C.
-
-Remember that you may need to scroll down to \"Theme Overrides > Font Sizes\" in the Inspector 
-to make your labels big enough to read. (This is font size 20px, for reference)."
+text = "One fun fact about me is that I'm very interested in competitive fighting games, but I don't have the free time to actually get good at them, unfortunately."
 vertical_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=1785057685]
+layout_mode = 0
+offset_right = 141.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 35
+text = "Evelyn Moore"
+
+[node name="Screenshot202610103_13_32Pm" type="Sprite2D" parent="." unique_id=396701445]
+position = Vector2(818, 266)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CompressedTexture2D_ovfvb")
